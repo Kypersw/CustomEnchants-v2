@@ -1,0 +1,12 @@
+name: CustomEnchants
+version: 1.0.0
+main: me.plugin.customenchants.CustomEnchants
+api-version: 1.20
+authors: [ KyperSword ]
+description: 60 Ozel Buyu ve GUI destegi sunan gelismis Minecraft eklentisi.
+
+commands:
+  enchantgui:
+    description: Özel Büyü Masası arayüzünü açar.
+    permission: customenchants.use
+    aliases: [ce, buyumasasi]
