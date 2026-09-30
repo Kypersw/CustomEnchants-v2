@@ -1,0 +1,31 @@
+name: Java CI with Maven (Plugin Jar Builder)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Depoyu Klonla
+      uses: actions/checkout@v3
+
+    - name: Java 17 Kur
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+
+    - name: Maven ile .jar Oluştur
+      run: mvn clean package --file pom.xml
+
+    - name: .jar Dosyasını İndirilebilir Yap
+      uses: actions/upload-artifact@v3
+      with:
+        name: CustomEnchants-Plugin
+        path: target/*.jar
